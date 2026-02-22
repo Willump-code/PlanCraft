@@ -18,7 +18,6 @@
                 padding: clamp(1px, 1vw, 0.5rem) clamp(1px, 2vw, 1rem);
                 font-size: clamp(0.8rem, 2.8vw, 2rem);
                 font-weight: 800;
-                border-radius: 20rem;
                 
 
                 &.painted{

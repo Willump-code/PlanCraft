@@ -67,6 +67,7 @@
 
 <style scoped lang="scss">
         .task{
+                border: 1px solid $color-border;
                 background-color: $color-bg-secondary;
                 width: 100%;
                 display: flex;

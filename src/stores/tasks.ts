@@ -51,22 +51,7 @@ export const useTasks = defineStore('tasks', ()=>{
                 return tasks.value.filter(e=>!e.active)
         })
 
-        tasks.value.push({
-                data: 'Изучить docker',
-                priority: 1,
-                date: new Date('2026-02-22'),
-                dueDate: null,
-                id: crypto.randomUUID(),
-                active: true,
-        })
-        tasks.value.push({
-                data: 'Закоммитить проект на гитхаб',
-                priority: 1,
-                date: new Date('2026-02-23'),
-                dueDate: null,
-                id: crypto.randomUUID(),
-                active: true,
-        })
+
 
         return {tasks, addTask, removeTask, countNotice, inboxTasks, todayTasks, doneTasks}
 })
