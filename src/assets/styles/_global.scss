@@ -1,0 +1,31 @@
+html{
+        font-size: 16px;
+}
+body{
+        font-family: 'Cuprum', sans-serif;
+        font-weight: 600;
+        color: $color-text;
+        background-color: $color-bg;
+}
+a{
+      color: $color-text;  
+}
+
+
+
+.container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+}
+.page-title{
+        font-size: clamp(1.5rem, 6vw, 3.5rem);
+}
+.page-head-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-top: 120px;
+        margin-bottom: 30px;
+        gap: clamp(10px, 3vw, 20px);
+}
