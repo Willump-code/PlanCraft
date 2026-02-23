@@ -3,12 +3,11 @@
                 <h1 class="page-title">
                         Входящие задачи
                 </h1>
-                <OpenAddTaskModalBtn></OpenAddTaskModalBtn>
+                <OpenAddTaskModalBtn :size="'l'"></OpenAddTaskModalBtn>
         </div>
         <Tasks :tasks="tasks.inboxTasks"></Tasks>
 
 
-        <AddTaskModal></AddTaskModal>
 </template>
 
 
@@ -16,7 +15,6 @@
         // imports
         import Tasks from '../components/Tasks.vue';
         import OpenAddTaskModalBtn from '../components/OpenAddTaskModalBtn.vue';
-        import AddTaskModal from '../components/addTaskModal.vue';
 
         // store
         import { useTasks } from '../stores/tasks';

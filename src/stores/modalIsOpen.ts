@@ -12,5 +12,11 @@ export const useModalIsOpen = defineStore('modalIsOpen', ()=>{
                 modalIsOpen.value = false
         }
 
-        return {modalIsOpen, openModal, closeModal}
+        
+        const defualtDate = ref<Date>();
+        function setDefualtDate(val: Date) {
+                defualtDate.value = val
+        }
+
+        return {modalIsOpen, openModal, closeModal, defualtDate, setDefualtDate}
 })

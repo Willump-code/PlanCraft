@@ -12,7 +12,14 @@
                                                 <option value=3>Не срочно</option>
                                         </select>
                                 </div>
-                                <MyButton class="modal__btn" :painted=true type="submit">Добавить задачу</MyButton>
+                                <MyButton 
+                                class="modal__btn" 
+                                type="submit"
+                                :painted=true 
+                                :size="'l'"
+                                >
+                                Добавить задачу
+                                </MyButton>
                         </form>
                 </div>
         </div>
@@ -22,7 +29,7 @@
 <script lang="ts" setup>
         // imports
         import MyButton from './ui/MyButton.vue';
-        import { ref } from 'vue';
+        import { ref, watch } from 'vue';
         import type { Priority } from '../types';
 
         // store
@@ -35,10 +42,17 @@
         const d = new Date()
         d.setMinutes(d.getMinutes() - d.getTimezoneOffset())
         const today = d.toISOString().split('T')[0]
-
-
         const text = ref<string>('')
-        const date = ref<string>(today ?? '')
+        const date = ref<string>(modalIsOpen.defualtDate?.toISOString().split('T')[0] ?? '1321')
+        watch(()=>modalIsOpen.modalIsOpen, val=>{
+                if (val === true) {
+                        date.value = modalIsOpen.defualtDate?.toISOString().split('T')[0] ?? today ?? ''
+                }else{
+                        modalIsOpen.setDefualtDate(new Date) 
+                }
+        })
+          
+        
         const priority = ref<Priority>(3)
         function addTask() {
                 const transformDate = new Date(date.value)
@@ -48,7 +62,6 @@
                 date.value=today ?? ''
                 priority.value=3
         }
-
 </script>
 
 
@@ -56,15 +69,15 @@
         .modal{
                 z-index: 10;
                 background-color: rgba(0, 0, 0, 0.63);
-                position: absolute;
+                position: fixed;
                 left: 0;
                 top: 0;
-                width: 100vw;
-                height: 100vh;
+                width: 100%;
+                height: 100%;
 
                 &__content{
                         z-index: 11;
-                        position: fixed;
+                        position: absolute;
                         padding: 4vw;
                         background-color: $color-bg;
                         left: 50%;

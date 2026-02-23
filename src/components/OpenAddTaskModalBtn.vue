@@ -1,5 +1,9 @@
 <template>
-        <MyButton @click="modalIsOpen.openModal()" :painted=false type="button">
+        <MyButton 
+        @click="modalIsOpen.openModal()" 
+        :painted=false 
+        :size="size"
+        type="button">
                 Добавить задачу
         </MyButton>
 </template>
@@ -11,6 +15,11 @@
         // store
         import { useModalIsOpen } from '../stores/modalIsOpen';
         const modalIsOpen = useModalIsOpen()
+
+
+        const props = defineProps<{
+                size: 's' | 'm' | 'l',
+        }>()
 </script>
 
 
