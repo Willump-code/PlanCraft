@@ -122,7 +122,7 @@
                         padding: 10px;
                         background-color: $color-bg-secondary;
                         width: 48%;
-                        height: 35%;
+                        min-height: 35%;
                         font-size: clamp(0.9rem, 4vw, 1.7rem);
                         border: 1px solid $color-border;
                 }

@@ -29,3 +29,9 @@ a{
         margin-bottom: 30px;
         gap: clamp(10px, 3vw, 20px);
 }
+@media(max-width:767px){
+        .page-head-wrap {
+                margin-top: 80px;
+                margin-bottom:30px;
+        }
+}

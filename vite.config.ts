@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 
 export default defineConfig({
+  base: '/plancraft/',
   plugins: [vue()],
   resolve: {
     alias: {

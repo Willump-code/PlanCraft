@@ -105,4 +105,9 @@
                 }
 
         }
+        @media(max-width:767px){
+                .calendar-list{
+                        gap: 40px;
+                }
+        }
 </style>
